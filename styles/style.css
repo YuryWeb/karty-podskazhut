@@ -57,6 +57,65 @@ figure {
   font-size: 30px;
 }
 
+.content__text-block {
+  font-size: 18px;
+}
+
+.content__text-block .content__paragraph:not(:last-of-type) {
+  margin-block-end: 1.5em;
+}
+
+.content__text-block a {
+  color: inherit;
+}
+
+.content__blockquote {
+  inline-size: 75%;
+  margin: 0 auto 1.5rem;
+  font-style: italic;
+  line-height: 2;
+}
+
+.content__list {
+  padding: 0 0 0 40px;
+  list-style: none;
+}
+
+.content__list li {
+  position: relative;
+}
+
+/* .content__list li:not(:last-of-type) {
+  margin-block-end: 10px;
+} */
+
+.content__list li:not(:last-child) {
+  margin-block-end: 10px;
+}
+
+.content__list li::before {
+  content: '';
+  position: absolute;
+  inline-size: 15px;
+  block-size: 15px;
+  margin-block-start: -7.5px;
+  background-image: url(../images/marker-light.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  inset-block-start: 50%;
+  inset-inline-start: -25px;
+}
+
+.content__text-block_type_first-lettered .content__paragraph:first-of-type::first-letter {
+  display: inline-block;
+  margin-inline-end: 1px;
+  padding: 0 4px;
+  font-weight: 700;
+  font-size: 30px;
+  background-color: var(--accent-color, #ffab6b);
+}
+
 .footer {
 
 }
