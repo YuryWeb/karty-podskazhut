@@ -23,7 +23,7 @@
   margin: 0;
   color: var(--text-color, #312a4e);
   font-family: var(--main-font, sans-serif);
-  border-color: var(--bg-color, #f3efec);
+  background-color: var(--bg-color, #f3efec);
 }
 
 p,
@@ -83,7 +83,6 @@ button:disabled {
 
 .header__logo {
 
-
 }
 
 .header__theme-toggler {
@@ -113,17 +112,21 @@ button:disabled {
 }
 
 .header__theme-button_is-active::after {
-
-
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inline-size: calc(100% + 8px);
+  block-size: 0.5ch;
+  background-color: var(--accent-color, #ffab6b);
+  inset-block-end: 0.3ch;
+  inset-inline-start: -4px;
 }
 
 .header__theme-button_type_dark {
 
-
 }
 
 .header__theme-button_type_light {
-
 
 }
 
@@ -188,7 +191,7 @@ button:disabled {
   padding: 0 4px;
   font-weight: 700;
   font-size: 30px;
-  background-color: var(--accent-color, #ffab6b);
+  background-color: var(--accent-color);
 }
 
 /* Изображение тянется на всю ширину экрана, +10vi чтобы нивелировать два 5vi в content-section */
@@ -217,6 +220,8 @@ button:disabled {
   font-size: 18px;
   text-align: center;
 }
+
+/* Стилизация карточки */
 
 .content__card {
   display: flex;
@@ -253,6 +258,10 @@ button:disabled {
   font-size: 18px;
 }
 
+/* -- END -- Стилизация карточки */
+
+/* Footer */
+
 .footer {
   margin-block-start: 10%;
   border-block-start: 1px solid currentColor;
@@ -264,3 +273,20 @@ button:disabled {
   font-size: 18px;
 }
 
+/* -- END -- Footer */
+
+.theme_dark .colored-text::after {
+  background-image: url(../images/pattern.svg);
+}
+
+.theme_dark .header__theme-button_is-active::after {
+  background-image: url(../images/pattern.svg); 
+}
+
+.theme_dark .content__text-block_type_first-lettered .content__paragraph:first-of-type::first-letter {
+  border: 1px solid currentColor;
+}
+
+.theme_dark .content__list li::before {
+  background-image: url(../images/marker-dark.svg);
+}
